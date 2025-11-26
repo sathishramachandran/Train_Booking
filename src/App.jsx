@@ -25,6 +25,15 @@ function App() {
               />
             }
           />
+          <Route
+            path="./Home"
+            element={
+              <TrainSearch
+                searchState={searchState}
+                setSearchState={setSearchState}
+              />
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
