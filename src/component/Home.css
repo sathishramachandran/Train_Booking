@@ -1,0 +1,116 @@
+/* PAGE */
+.home-page {
+  width: 100%;
+  height: auto;
+  background: #f7f7f7;
+  font-family: "Poppins", sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 25px 60px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #e10600;
+}
+
+.nav-links a {
+  margin: 0 18px;
+  text-decoration: none;
+  color: #333;
+  font-size: 17px;
+}
+
+.nav-links a:hover {
+  color: #e10600;
+}
+
+.signin-btn {
+  background: #e10600;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* HERO */
+.hero-content {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.hero-subtitle {
+  color: #777;
+  font-size: 18px;
+}
+
+.hero-title {
+  margin-top: 10px;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero-title span {
+  color: #e10600;
+}
+
+/* SEARCH BOX */
+.search-box {
+  width: 70%;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 18px 25px;
+  border-radius: 14px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.12);
+}
+
+.search-box input {
+  width: 30%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.search-btn {
+  background: #e10600;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* TRAIN IMAGES */
+.hero-images {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.train {
+  width: 290px;
+  object-fit: contain;
+}
+
+.center {
+  transform: scale(1.15);
+}
