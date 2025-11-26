@@ -1,16 +1,34 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-
-import Header from './component/Header'
+import Header from "./component/Header";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import TrainSearch from "./component/TrainSearch";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [searchState, setSearchState] = useState({
+    from: "",
+    to: "",
+    date: "",
+  });
 
   return (
-   <>
-   <Header />
-   </>
-  )
+    <>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <TrainSearch
+                searchState={searchState}
+                setSearchState={setSearchState}
+              />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
-export default App
+export default App;
