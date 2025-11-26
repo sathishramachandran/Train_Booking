@@ -1,15 +1,12 @@
 import React from "react";
 import "./Home.css";
-import Train1 from "./assets/train1.png";
-import Train1 from "./assets/train2.png";
-import Train1 from "./assets/train3.png";
+
+import TrainHero from "../assets/Train.jpg";
 
 const Home = () => {
   return (
     <div className="home-page">
-      {/* NAVBAR - kept simple (Header component will also render above) */}
-      {/* If your Header already renders the navbar, you can remove the header below.
-          I kept this as standalone so the page matches your image exactly. */}
+      {/* NAVBAR */}
       <header className="navbar">
         <div className="logo">Train</div>
 
@@ -23,27 +20,17 @@ const Home = () => {
         <button className="signin-btn">Sign In</button>
       </header>
 
-      {/* HERO TEXT */}
-      <div className="hero-content">
-        <p className="hero-subtitle">Get your train tickets</p>
-        <h1 className="hero-title">
-          Find Best Train <span>For You!</span>
-        </h1>
+      {/* FULL SCREEN HERO IMAGE */}
+      <div className="hero-image">
+        <img src={TrainHero} alt="Train Hero" />
       </div>
 
       {/* SEARCH BOX */}
       <div className="search-box">
-        <input type="text" placeholder="From..." aria-label="From" />
-        <input type="text" placeholder="To..." aria-label="To" />
-        <input type="date" aria-label="Date" />
+        <input type="text" placeholder="From..." />
+        <input type="text" placeholder="To..." />
+        <input type="date" />
         <button className="search-btn">Search</button>
-      </div>
-
-      {/* TRAIN IMAGES */}
-      <div className="hero-images">
-        <img src={Train1} alt="train1" />
-        <img src={Train2} alt="train1" />
-        <img src={Train3} alt="train1" />
       </div>
     </div>
   );
