@@ -38,21 +38,9 @@ const Home = () => {
 
       {/* TRAIN IMAGES */}
       <div className="hero-images">
-        <img
-          src="https://unsplash.com/photos/black-and-blue-train-running-near-the-tunnel-2PKKbKEkmQE"
-          alt="train1"
-          className="train left"
-        />
-        <img
-          src="https://unsplash.com/photos/red-train-near-lake-D5aHNDl9jGA"
-          alt="train2"
-          className="train center"
-        />
-        <img
-          src="https://unsplash.com/photos/train-on-bridge-in-forest-vWGvoiHTFPU"
-          alt="train3"
-          className="train right"
-        />
+        <img src="./Train1.jpg" alt="train1" className="train left" />
+        <img src="./Train2.jpg" alt="train2" className="train center" />
+        <img src="./Train3.jpg" alt="train3" className="train right" />
       </div>
     </div>
   );
