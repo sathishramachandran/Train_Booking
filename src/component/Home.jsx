@@ -4,7 +4,9 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="home-page">
-      {/* NAVBAR */}
+      {/* NAVBAR - kept simple (Header component will also render above) */}
+      {/* If your Header already renders the navbar, you can remove the header below.
+          I kept this as standalone so the page matches your image exactly. */}
       <header className="navbar">
         <div className="logo">Train</div>
 
@@ -28,9 +30,9 @@ const Home = () => {
 
       {/* SEARCH BOX */}
       <div className="search-box">
-        <input type="text" placeholder="From..." />
-        <input type="text" placeholder="To..." />
-        <input type="date" />
+        <input type="text" placeholder="From..." aria-label="From" />
+        <input type="text" placeholder="To..." aria-label="To" />
+        <input type="date" aria-label="Date" />
         <button className="search-btn">Search</button>
       </div>
 

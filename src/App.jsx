@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Header from "./component/Header";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import TrainSearch from "./component/TrainSearch";
+import Home from "./Home";
+// If you still have TrainSearch and want it, you can add its route too.
+// import TrainSearch from "./component/TrainSearch";
 
 function App() {
   const [searchState, setSearchState] = useState({
@@ -12,31 +14,30 @@ function App() {
   });
 
   return (
-    <>
+    <BrowserRouter>
+      {/* Header inside the router so links (NavLink/Link) work if used inside Header */}
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <TrainSearch
-                searchState={searchState}
-                setSearchState={setSearchState}
-              />
-            }
-          />
-          <Route
-            path="./Home"
-            element={
-              <TrainSearch
-                searchState={searchState}
-                setSearchState={setSearchState}
-              />
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </>
+
+      <Routes>
+        {/* Home route */}
+        <Route path="/" element={<Home />} />
+
+        {/* /home route (same component) */}
+        <Route path="/home" element={<Home />} />
+
+        {/* Example: If you want TrainSearch route later (uncomment import above)
+        <Route
+          path="/search"
+          element={
+            <TrainSearch
+              searchState={searchState}
+              setSearchState={setSearchState}
+            />
+          }
+        /> 
+        */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
