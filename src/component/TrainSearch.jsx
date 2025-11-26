@@ -11,28 +11,28 @@ const Container = styled.div`
 `;
 
 export default function TrainSearch({ searchState, setSearchState }) {
-    return (
-        <>
-            <Container>
-                <h2>Search for trains</h2>
-                <div className="tsearchbar">
-                    <form
-                        className="form-lable-tsearchbar"
-                        value={searchState.from}
-                        onChange={(e) =>
-                            setSearchState((prevState) => ({
-                                ...prevState,
-                                from: e.target.value,
-                            }))
-                        }
-                        {locations.map((data) => (
-                            <option key={`${data}-source`} value={data}>
-                                {data}
-                            </option>
-                        ))}
-                    ></form>
-                </div>
-            </Container>
-        </>
-    );
+  return (
+    <Container>
+     
+
+      <div className="tsearchbar">
+        <form className="form-lable-tsearchbar">
+          <select
+            value={searchState.from}
+            onChange={(e) =>
+              setSearchState((prev) => ({ ...prev, from: e.target.value }))
+            }
+          >
+            <option value="">Select Source</option>
+
+            {locations.map((loc) => (
+              <option key={loc} value={loc}>
+                {loc}
+              </option>
+            ))}
+          </select>
+        </form>
+      </div>
+    </Container>
+  );
 }

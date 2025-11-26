@@ -16,7 +16,7 @@ const HeaderTitle = styled.h1`
 export default function Header() {
   return (
     <HeaderContainer>
-      <HeaderTitle>Train Ticket booking app</HeaderTitle>
+      <HeaderTitle>Train Ticket Booking App</HeaderTitle>
     </HeaderContainer>
   );
 }

@@ -1,3 +1,11 @@
+export const locations =[
+    "chennai",
+    "Coimbotre",
+    "Trichy",
+    "Madurai",
+    "salem",
+
+];
 export const Train = [
   {
     id: 1,
@@ -297,11 +305,4 @@ export const Train = [
     availableSeats: ["U27", "L10", "U34", "L5"],
   },
 ];
-export const locations =[
-    "chennai",
-    "Coimbotre",
-    "Trichy",
-    "Madurai",
-    "salem",
 
-];
