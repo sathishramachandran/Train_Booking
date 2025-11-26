@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Header from "./component/Header";
-import Home from "./Home";
+import Home from "./component/Home";
 // If you still have TrainSearch and want it, you can add its route too.
 // import TrainSearch from "./component/TrainSearch";
 
