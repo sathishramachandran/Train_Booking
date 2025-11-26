@@ -4,11 +4,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./component/Header";
 import TrainSearch from "./component/TrainSearch";
 import Home from "./component/Home";
+import { locations } from "./utils";
 
 function App() {
   const [searchState, setSearchState] = useState({
-    from: "",
-    to: "",
+    from: locations[0],
+    to: locations[2],
     date: "",
   });
 

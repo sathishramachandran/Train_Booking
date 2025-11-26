@@ -1,9 +1,9 @@
 export const locations =[
-    "chennai",
+    "Chennai",
     "Coimbotre",
     "Trichy",
     "Madurai",
-    "salem",
+   
 
 ];
 export const Train = [
