@@ -7,6 +7,7 @@ import Home from "./component/Home";
 import Merged from "./component/Merged";
 import TrainList from "./component/TrainList";
 import TrainLayout from "./component/TrainLayout";
+import Bookingform from "./component/Bookingform";
 
 function App() {
   const [searchState, setSearchState] = useState({
@@ -40,7 +41,7 @@ function App() {
       trainType: "Express",
       availableSeats: [1, 2, 3],
       availableDates: ["2025-11-27", "2025-11-29"],
-    }
+    },
   ];
 
   return (
@@ -68,13 +69,22 @@ function App() {
         {/* List All Dummy Trains */}
         <Route path="/tick" element={<TrainList trains={dummyTrains} />} />
 
-        {/* Train Seat Layout / Booking Page */}
+
         <Route
           path="/train/:id"
           element={
             <TrainLayout
               selectedSeats={selectedSeats}
               setSelectedSeats={setSelectedSeats}
+            />
+          }
+        />
+        <Route
+          path="/train/book"
+          element={
+            <Bookingform
+              selectedSeats={selectedSeats}
+              searchState={searchState}
             />
           }
         />
