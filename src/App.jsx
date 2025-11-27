@@ -17,7 +17,7 @@ function App() {
 
   const [selectedSeats, setSelectedSeats] = useState([]);
 
-  // Dummy Train Data (You forgot this part)
+  // ✅ Dummy Train Data Added Here
   const dummyTrains = [
     {
       id: 1,
@@ -30,6 +30,17 @@ function App() {
       availableSeats: [1, 2, 3, 4, 5],
       availableDates: ["2025-11-27", "2025-11-28"],
     },
+    {
+      id: 2,
+      name: "Bangalore Mail",
+      source: "Bangalore",
+      destination: "Chennai",
+      departureTime: "06:00 PM",
+      price: 300,
+      trainType: "Express",
+      availableSeats: [1, 2, 3],
+      availableDates: ["2025-11-27", "2025-11-29"],
+    }
   ];
 
   return (
