@@ -123,6 +123,11 @@ body {
   z-index: 5; /* IMPORTANT: Search bar is clickable */
 }
 
+.available {
+  position: absolute;
+  z-index: 5;
+}
+
 .search-input {
   flex: 1;
   padding: 18px;

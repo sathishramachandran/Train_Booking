@@ -130,7 +130,7 @@ const Merged = ({ searchState, setSearchState }) => {
       </div>
 
       {/* SEARCH RESULTS */}
-      <div style={{ width: "90%", margin: "40px auto" }}>
+      <div className="available" style={{ width: "90%", margin: "40px auto" }}>
         {filteredTrain.length > 0 && (
           <div>
             <h2>Available Trains</h2>

@@ -17,21 +17,6 @@ function App() {
 
   const [selectedSeats, setSelectedSeats] = useState([]);
 
-  // Dummy Train Data (You forgot this part)
-  const dummyTrains = [
-    {
-      id: 1,
-      name: "Chennai Express",
-      source: "Chennai",
-      destination: "Bangalore",
-      departureTime: "08:30 AM",
-      price: 250,
-      trainType: "Superfast",
-      availableSeats: [1, 2, 3, 4, 5],
-      availableDates: ["2025-11-27", "2025-11-28"],
-    },
-  ];
-
   return (
     <BrowserRouter>
       <Routes>
