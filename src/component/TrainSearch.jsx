@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { locations, Train } from "../utils";
 import TrainList from "./TrainList";
 
+
 const Container = styled.div`
   background-color: white;
   padding: 1rem;
