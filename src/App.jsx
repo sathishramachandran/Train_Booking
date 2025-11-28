@@ -18,7 +18,7 @@ function App() {
 
   const [selectedSeats, setSelectedSeats] = useState([]);
 
-  // Dummy train data
+  // 🔹 Dummy Train Data (shared)
   const dummyTrains = [
     {
       id: 1,
@@ -26,6 +26,7 @@ function App() {
       source: "Chennai",
       destination: "Bangalore",
       departureTime: "08:30 AM",
+      arrivalTime: "12:45 PM",
       price: 250,
       trainType: "Superfast",
       availableSeats: [1, 2, 3, 4, 5],
@@ -37,6 +38,7 @@ function App() {
       source: "Bangalore",
       destination: "Chennai",
       departureTime: "06:00 PM",
+      arrivalTime: "10:15 PM",
       price: 300,
       trainType: "Express",
       availableSeats: [1, 2, 3],
@@ -47,7 +49,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Home / Search Page */}
+        {/* MAIN MERGED HOME PAGE */}
         <Route
           path="/"
           element={
@@ -55,7 +57,7 @@ function App() {
           }
         />
 
-        {/* Only Search Component */}
+        {/* ONLY SEARCH PAGE */}
         <Route
           path="/show"
           element={
@@ -66,19 +68,22 @@ function App() {
           }
         />
 
-        {/* List All Dummy Trains */}
+        {/* SHOW ALL DUMMY TRAINS */}
         <Route path="/tick" element={<TrainList trains={dummyTrains} />} />
 
-
+        {/* SEAT SELECTION PAGE */}
         <Route
           path="/train/:id"
           element={
             <TrainLayout
               selectedSeats={selectedSeats}
               setSelectedSeats={setSelectedSeats}
+              trains={dummyTrains}  // passed to identify train by ID
             />
           }
         />
+
+        {/* BOOKING PAGE */}
         <Route
           path="/train/book"
           element={

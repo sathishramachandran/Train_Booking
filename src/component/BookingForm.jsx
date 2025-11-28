@@ -1,12 +1,16 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Bookingform({ searchState, selectedSeats }) {
   const navigate = useNavigate();
+  const { state } = useLocation();
+
+  const totalPrice = state?.totalPrice || 0;
+  const pricePerSeat = state?.pricePerSeat || 0;
 
   const handleSubmit = () => {
     alert("Your ticket is booked successfully!");
-    navigate("/"); // redirect to home
+    navigate("/");
   };
 
   return (
@@ -17,6 +21,10 @@ export default function Bookingform({ searchState, selectedSeats }) {
         {searchState.from} → {searchState.to}
       </h4>
       <h4>Date: {searchState.date}</h4>
+
+      <h3>Price per seat: ₹{pricePerSeat}</h3>
+
+      <h2 style={{ color: "green" }}>Total Price: ₹{totalPrice}</h2>
 
       <h3>Please fill passenger details</h3>
 

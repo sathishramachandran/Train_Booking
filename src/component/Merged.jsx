@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import "./Home.css";
 import TrainVideo from "../assets/trainviedo.mp4";
-
 import { locations, Train } from "../utils";
 
 const Merged = ({ searchState, setSearchState }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showSignin, setShowSignin] = useState(false);
-
   const [filteredTrain, setFilteredTrain] = useState([]);
 
   const handleSearch = () => {
@@ -131,7 +129,7 @@ const Merged = ({ searchState, setSearchState }) => {
 
       {/* SEARCH RESULTS */}
       <div className="available" style={{ width: "90%", margin: "40px auto" }}>
-        {filteredTrain.length > 0 && (
+        {filteredTrain.length > 0 ? (
           <div>
             <h2>Available Trains</h2>
 
@@ -166,12 +164,9 @@ const Merged = ({ searchState, setSearchState }) => {
                   <strong>Type:</strong> {train.TrainType}
                 </p>
               </div>
-             
             ))}
           </div>
-        )}
-
-        {filteredTrain.length === 0 && (
+        ) : (
           <p style={{ textAlign: "center" }}>No trains found</p>
         )}
       </div>
