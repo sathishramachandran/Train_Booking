@@ -1,0 +1,84 @@
+/* --- PAGE WRAPPER --- */
+.search-page {
+  width: 90%;
+  margin: 20px auto;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.search-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #213d77;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* --- IRCTC SEARCH BOX --- */
+.search-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid #dfe7f5;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* FORM GROUP */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #213d77;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #b9c6dd;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #213d77;
+}
+
+/* --- SEARCH BUTTON --- */
+.search-btn {
+  grid-column: span 2;
+  background: #ff9933;
+  color: #213d77;
+  font-weight: 700;
+  padding: 12px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background: #ffb366;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .search-box {
+    grid-template-columns: 1fr;
+  }
+
+  .search-btn {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,11 @@
+:root{--primary:#007bff;--primary-dark:#0056c7}
+.site-header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);position:sticky;top:0;z-index:200}
+.hf-inner{max-width:1200px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;color:var(--primary);cursor:pointer;font-size:20px}
+.nav a{margin:0 10px;text-decoration:none;color:#333;font-weight:600}
+.hf-actions{display:flex;gap:10px;align-items:center}
+.signin-btn{background:var(--primary);color:#fff;border:0;padding:8px 12px;border-radius:8px;cursor:pointer}
+.site-footer{background:var(--primary-dark);color:#fff;padding:24px 0;margin-top:40px}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;gap:24px;justify-content:space-between;padding:0 16px}
+.footer-bottom{text-align:center;margin-top:14px;color:rgba(255,255,255,0.85);padding-top:8px;border-top:1px solid rgba(255,255,255,0.06)}
+@media(max-width:768px){.nav{display:none}.hf-actions .signin-btn{display:none}}

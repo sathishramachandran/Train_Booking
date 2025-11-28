@@ -1,0 +1,15 @@
+/* Seats.css */
+.container{max-width:1100px;margin:30px auto;padding:0 16px}
+.seats-header{margin-bottom:12px}
+.seat-legend{margin:12px 0;display:flex;gap:12px;align-items:center;color:#333}
+.legend{display:inline-block;width:16px;height:16px;margin-right:6px;border-radius:4px}
+.legend.available{background:#2ecc71}
+.legend.selected{background:#f1c40f}
+.legend.booked{background:#bdc3c7}
+.seat-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin-top:12px}
+.seat{padding:12px;border-radius:6px;border:none;cursor:pointer;font-weight:700}
+.seat.available{background:#e8fbef;color:#2b7a3a}
+.seat.booked{background:#f0f0f0;color:#888;cursor:not-allowed}
+.seat.selected{background:#ffeaa7;color:#6d4c00;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.seat-actions{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.btn.book-now{background:#0066cc;color:white;padding:10px 18px;border-radius:8px;border:0;cursor:pointer}

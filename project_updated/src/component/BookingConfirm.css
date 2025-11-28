@@ -1,0 +1,7 @@
+/* BookingConfirm.css */
+.container{max-width:800px;margin:40px auto;padding:0 16px}
+.ticket-card{background:#fff;padding:22px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.06);text-align:left}
+.ticket-row{display:flex;justify-content:space-between;margin:10px 0}
+.ticket-actions{display:flex;gap:12px;margin-top:18px}
+.btn{padding:10px 14px;border-radius:8px;border:1px solid #ccc;cursor:pointer}
+.btn.primary{background:#0066cc;color:white;border:0}

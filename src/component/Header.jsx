@@ -1,22 +1,45 @@
-import React from "react";
-import styled from "styled-components";
-
-const HeaderContainer = styled.header`
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-`;
-
-const HeaderTitle = styled.h1`
-  font-size: 2rem;
-  margin: 0;
-`;
+import React, { useState } from "react";
+import "./Header.css";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <HeaderContainer>
-      <HeaderTitle>Train Ticket Booking App</HeaderTitle>
-    </HeaderContainer>
+    <header className="irctc-header">
+      <div className="nav-container">
+
+        {/* Logo Section */}
+        <div className="logo-section">
+          <img
+            src="https://www.irctc.co.in/nget/assets/images/logo.png"
+            alt="IRCTC Logo"
+            className="irctc-logo"
+          />
+          <h2 className="app-title">Train Ticket Booking</h2>
+        </div>
+
+        {/* Desktop Menu */}
+        <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <a href="/">Home</a>
+          <a href="/search">Search Trains</a>
+          <a href="/booking">Booking</a>
+          <a href="/contact">Contact</a>
+        </nav>
+
+        {/* Login + Register */}
+        <div className="auth-buttons">
+          <button className="login-btn">Login</button>
+          <button className="register-btn">Register</button>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <div
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </div>
+      </div>
+    </header>
   );
 }

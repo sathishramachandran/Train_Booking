@@ -1,86 +1,77 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import { locations, Train } from "../utils";
-import TrainList from "./TrainList";
+import "./TrainSearch.css";
 
+export default function TrainSearch({ onSearch }) {
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+  const [date, setDate] = useState("");
+  const [classtype, setClasstype] = useState("Sleeper");
 
-const Container = styled.div`
-  background-color: white;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-`;
+  const handleSearch = () => {
+    if (!from || !to || !date) {
+      alert("Please fill all fields");
+      return;
+    }
 
-export default function TrainSearch({ searchState, setSearchState }) {
-  const [filteredTrain, setFilteredTrain] = useState([]);
-
-  const handledSearch = () => {
-    const result = Train.filter(
-      (t) =>
-        t.source === searchState.from &&
-        t.destination === searchState.to &&
-        t.availableDates.includes(searchState.date)
-    );
-
-    setFilteredTrain(result);
+    onSearch({
+      from,
+      to,
+      date,
+      classtype,
+    });
   };
 
   return (
-    <Container>
-      <div className="tsearchbar">
-        <form className="form-lable-tsearchbar">
-          <select
-            value={searchState.from}
-            onChange={(e) =>
-              setSearchState((prev) => ({ ...prev, from: e.target.value }))
-            }
-          >
-            <option value="">Select Source</option>
-            {locations.map((loc) => (
-              <option key={loc} value={loc}>
-                {loc}
-              </option>
-            ))}
-          </select>
-        </form>
+    <div className="search-page">
+      <h2 className="search-title">Search Trains</h2>
 
-        <form className="form-lable-tsearchbar">
-          <select
-            value={searchState.to}
-            onChange={(e) =>
-              setSearchState((prev) => ({ ...prev, to: e.target.value }))
-            }
-          >
-            <option value="">Select Destination</option>
-            {locations.map((loc) => (
-              <option key={`${loc}-dest`} value={loc}>
-                {loc}
-              </option>
-            ))}
-          </select>
-        </form>
+      <div className="search-box">
+        <div className="form-group">
+          <label>From Station</label>
+          <input
+            type="text"
+            placeholder="Enter departure station"
+            value={from}
+            onChange={(e) => setFrom(e.target.value)}
+          />
+        </div>
 
-        <input
-          className="form-lable-tsearchbar"
-          type="date"
-          value={searchState.date}
-          onChange={(e) =>
-            setSearchState((prevState) => ({
-              ...prevState,
-              date: e.target.value,
-            }))
-          }
-        />
+        <div className="form-group">
+          <label>To Station</label>
+          <input
+            type="text"
+            placeholder="Enter arrival station"
+            value={to}
+            onChange={(e) => setTo(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Journey Date</label>
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Class</label>
+          <select
+            value={classtype}
+            onChange={(e) => setClasstype(e.target.value)}
+          >
+            <option>Sleeper</option>
+            <option>3A</option>
+            <option>2A</option>
+            <option>1A</option>
+          </select>
+        </div>
+
+        <button className="search-btn" onClick={handleSearch}>
+          Search Trains
+        </button>
       </div>
-
-      <button className="form-lable-tsearchbar" onClick={handledSearch}>
-        Search
-      </button>
-
-      {filteredTrain.length > 0 && <TrainList trains={filteredTrain} />}
-
-      {filteredTrain.length === 0 && <p>No trains found</p>}
-    </Container>
+    </div>
   );
 }
